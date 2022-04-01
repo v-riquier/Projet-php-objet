@@ -1,7 +1,7 @@
 <?php
 session_start();
 try {
-    $MaBase = new PDO('mysql:host=mysql-ogez-riquier.alwaysdata.net;dbname=ogez-riquier_astucesjeux', '257075_test', 'pokemonprovidence');
+    $MaBase = new PDO('mysql:host=localhost;dbname=yes', 'root', 'root');
 } catch (Exception $e) {
     header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     exit();
