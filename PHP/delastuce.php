@@ -13,13 +13,21 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice BDD</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../Image/icone.png">
     <link rel='stylesheet' href='fichier.css'>
-    <title>Exercice BDD</title>
 </head>
 
 <body class="blur" background="../Image/1204408.jpg">
-    <h1>Affichage de la base de donnée</h1>
+    <h1>Suppression d'astuces</h1>
+    <?php
+    if (isset($_POST["supp"])) {
+        if (isset($_SESSION["NoUser"])) {
+            $Req = $MaBase->query("DELETE FROM Astuce WHERE IDAstuce = '" . $_POST["supp"] . "'");
+            $Req = $MaBase->query("DELETE FROM Commentaire WHERE IDAstuce = '" . $_POST["supp"] . "'");
+        } else echo "Vous n'êtes pas connecté";
+    }
+    ?>
     <form action="" method="post">
         Jeux : <select name="nbJeu" id="nbJeu" required>
             <option value=""> ---Choisir Jeux--- </option>
@@ -36,28 +44,13 @@ try {
     <?php
     try {
         if (isset($_POST["btnJeux"])) {
-            $Req = $MaBase->query("SELECT Astuce.IdAstuce,Astuce.Astuce,User.NomUser FROM Astuce,User WHERE Astuce.IdUser = User.IdUser AND Astuce.IdJeux = '". $_POST["nbJeu"]."'");
-    ?>
-            <table>
-                <?php
-                while ($tab = $Req->fetch()) {
-                ?>
-                    <tr>
-                        <td><?php echo $tab["Astuce"]; ?></td>
-                        <td><?php echo $tab["NomUser"]; ?></td>
-                    </tr>
-                <?php
-                }
-                ?>
-            </table>
-    <?php
+            $Req = $MaBase->query("SELECT Astuce.IdAstuce,Astuce.Astuce,User.NomUser FROM Astuce,User WHERE Astuce.IdUser = User.IdUser AND Astuce.IdJeux = '" . $_POST["nbJeu"] . "'");
         }
     } catch (Exception $e) {
         echo "La base virale VPS n'a pas été mis à jour." . $e->getMessage();
     }
     ?>
     <p><a href="../index.php">Retour</a></p>
-
 </body>
 
 </html>

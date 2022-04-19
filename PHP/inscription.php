@@ -2,10 +2,9 @@
 session_start();
 include "../Classes/Utilisateur.php";
 try {
-    $MaBase = new PDO('mysql:host=localhost;dbname=yes', 'root', 'root');
+    $MaBase = new PDO('mysql:host=mysql-ogez-riquier.alwaysdata.net;dbname=ogez-riquier_astucesjeux', '257075_test', 'pokemonprovidence');
 } catch (Exception $e) {
-    header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    exit();
+    echo $e;
 }
 ?>
 <!DOCTYPE html>
@@ -21,7 +20,7 @@ try {
 </head>
 
 <body class="blur" background="../Image/1204408.jpg">
-    <h1>Connexion</h1>
+    <h1>Inscription</h1>
     <?php
     if (isset($_POST["btnAjout"])){
         $Req = $MaBase->query("INSERT INTO User(NomUser,Pass,IdAdmin) VALUES ('" . $_POST["txtUser"] . "','" . $_POST["pwdUser"] . "','0')");

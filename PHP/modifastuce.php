@@ -15,34 +15,32 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercice BDD</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../Image/icone.png">
-    <link rel='stylesheet' href='../CSS/fichier.css'>
+    <link rel='stylesheet' href='fichier.css'>
 </head>
 
 <body class="blur" background="../Image/1204408.jpg">
-    <h1>Insertion d'astuces</h1>
+    <h1>Modification d'astuces</h1>
     <?php
     if (isset($_POST["btnJeux"])) {
         if (isset($_SESSION["NoUser"])) {
-            $Req = $MaBase->query("INSERT INTO Astuce(IdJeux,IdUser,Astuce) VALUES ('" . $_POST["nbJeu"] . "','" . $_SESSION["NoUser"] . "','" . $_POST["txtAstuce"] . "')");
-            echo "Astuce ajoutée";
+            $Req = $MaBase->query("UPDATE Astuce SET Astuce = '" . $_POST["txtAstuce"] . "' WHERE IdAstuce = '" . $_POST["nbastuce"] . "'");
         } else echo "Vous n'êtes pas connecté";
-        echo '<p><a href="ajoutastuce.php">Ajouter une autre astuce</a></p>';
+        echo '<p><a href="modifastuce.php">Modifier une autre astuce</a></p>';
     } else {
     ?>
-        <h2>Formulaire </h2>
         <form action="" method="post">
-            Jeux : <select name="nbJeu" id="nbJeu" required>
-                <option value=""> ---Choisir Jeux--- </option>
-                <?php $reponse = $MaBase->query("SELECT * FROM Jeux ORDER BY Titre");
+            Astuce : <select name="nbastuce" id="nbastuce" required>
+                <option valeur="">---Choisir Astuce---</option>
+                <?php $reponse = $MaBase->query("SELECT * FROM Astuce");
                 while ($donnees = $reponse->fetch()) {
                 ?>
-                    <option value="<?php echo $donnees['IdJeux']; ?>">
-                        <?php echo $donnees['Titre']; ?>
+                    <option value="<?php echo $donnees['IdAstuce']; ?>">
+                        <?php echo $donnees['Astuce']; ?>
                     </option>
                 <?php } ?>
             </select>
-            Astuce : <input type="text" name="txtAstuce" id="txtAstuce" required>
-            <input type="submit" name="btnJeux" value="Ajouter une astuce">
+            Modif : <input type="text" name="txtAstuce" id="txtAstuce" required>
+            <input type="submit" name="btnJeux" value="Modifier une astuce">
         </form>
     <?php
     }

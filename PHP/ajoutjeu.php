@@ -1,10 +1,9 @@
 <?php
 session_start();
 try {
-    $MaBase = new PDO('mysql:host=localhost;dbname=yes', 'root', 'root');
+    $MaBase = new PDO('mysql:host=mysql-ogez-riquier.alwaysdata.net;dbname=ogez-riquier_astucesjeux', '257075_test', 'pokemonprovidence');
 } catch (Exception $e) {
-    header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    exit();
+    echo $e;
 }
 ?>
 <!DOCTYPE html>
@@ -23,11 +22,11 @@ try {
     <h1>Insertion de jeux</h1>
     <?php
     if (isset($_POST["btnJeux"])) {
-                $Req = $MaBase->query("INSERT INTO Jeux(Titre) VALUES ('" . $_POST["nomJeu"] . "')");
-                echo "Jeu ajouté";
-    ?>
-        <p><a href="ajoutjeu.php">Ajouter un autre jeu</a></p>
-    <?php
+        if (isset($_SESSION["NoUser"])) {
+            $Req = $MaBase->query("INSERT INTO Jeux(Titre) VALUES ('" . $_POST["nomJeu"] . "')");
+            echo "Jeu ajouté";
+        } else echo "Vous n'êtes pas connecté";
+        echo '<p><a href="ajoutjeu.php">Ajouter un autre jeu</a></p>';
     } else {
     ?>
         <h2>Formulaire </h2>
@@ -44,15 +43,11 @@ try {
             <tr>
                 <th>Titre</th>
             </tr>
-            <?php
-            while ($tab = $Req->fetch()) {
-            ?>
+            <?php while ($tab = $Req->fetch()) { ?>
                 <tr>
                     <td><?php echo $tab["Titre"]; ?></td>
                 </tr>
-            <?php
-            }
-            ?>
+            <?php } ?>
         </table>
     <?php
     } catch (Exception $e) {

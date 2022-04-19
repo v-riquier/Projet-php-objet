@@ -2,10 +2,9 @@
 session_start();
 include "../Classes/Utilisateur.php";
 try {
-    $MaBase = new PDO('mysql:host=localhost;dbname=yes', 'root', 'root');
+    $MaBase = new PDO('mysql:host=mysql-ogez-riquier.alwaysdata.net;dbname=ogez-riquier_astucesjeux', '257075_test', 'pokemonprovidence');
 } catch (Exception $e) {
-    header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    exit();
+    echo $e;
 }
 ?>
 <!DOCTYPE html>
@@ -27,12 +26,9 @@ try {
         $Req = $MaBase->query("SELECT * FROM User WHERE NomUser = '" . $_POST["txtUser"] . "' AND Pass = '" . $_POST["pwdUser"] . "'");
         $test = $Req->fetch();
         if (isset($test["IdUser"])) {
-            $util=new User($test["IdUser"],$test["NomUser"]);
+            $util = new User($test["IdUser"], $test["NomUser"]);
             echo "Connecté en tant que " . $_SESSION["NomUser"];
-        } else {
-            echo "Utilisateur inconnu";
-        }
-
+        } else echo "Utilisateur inconnu";
     } else {
     ?>
         <div class="formulaire">

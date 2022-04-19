@@ -1,10 +1,9 @@
 <?php
 session_start();
 try {
-    $MaBase = new PDO('mysql:host=localhost;dbname=yes', 'root', 'root');
+    $MaBase = new PDO('mysql:host=mysql-ogez-riquier.alwaysdata.net;dbname=ogez-riquier_astucesjeux', '257075_test', 'pokemonprovidence');
 } catch (Exception $e) {
-    header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    exit();
+    echo $e;
 }
 ?>
 <!DOCTYPE html>
@@ -20,43 +19,27 @@ try {
 </head>
 
 <body class="blur" background="Image/1204408.jpg">
-<div class="compte">
-        <?php
-        if(!isset($_SESSION["NomUser"])){
-            ?>
-            <li><a href="PHP/connection.php">Connexion</a></li>
-            <li><a href="PHP/inscription.php">Inscription</a></li>
+    <div class="compte">
+        <ul>
             <?php
-        }
-        else{
+            if (!isset($_SESSION["NomUser"])) {
+                echo '<li><a href="PHP/connection.php">Connexion</a></li>';
+                echo '<li><a href="PHP/inscription.php">Inscription</a></li>';
+            } else echo '<li><a href="PHP/deconnection.php">Deconnexion</a></li>';
             ?>
-            <li><a href="PHP/deconnection.php">Deconnexion</a></li>
-            <?php
-        }
-        ?>
+        </ul>
     </div>
     <h1 class="centre"><u>Bienvenue Sur Astuce-Jeux !</u></h1>
     <nav>
         <div class="border">
-            <li>
-                <a href="PHP/ajoutastuce.php">Ajouter Astuce</a>
-            </li>
-
-            <li>
-                <a href="PHP/ajoutjeu.php">Ajouter Jeux</a>
-            </li>
-
-            <li>
-                <a href="PHP/affichage.php">Voir Astuce</a>
-            </li>
-
-            <li>
-                <a href="PHP/suppression.php">Suppression</a>
-            </li>
-
-            <li>
-                <a href="PHP/modif.php">Modif</a>
-            </li>
+            <ul>
+                <li><a href="PHP/affichage.php">Voir Astuce</a></li>
+                <li><a href="PHP/ajoutastuce.php">Ajouter Astuce</a></li>
+                <li><a href="PHP/ajoutcomm.php">Ajouter Commentaire</a></li>
+                <li><a href="PHP/ajoutjeu.php">Ajouter Jeux</a></li>
+                <li><a href="PHP/modifastuce.php">Modifier Astuce</a></li>
+                <li><a href="PHP/delastuce.php">Supprimer Astuce</a></li>
+            </ul>
         </div>
     </nav>
 </body>
