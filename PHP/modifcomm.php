@@ -21,13 +21,12 @@ try {
 <body>
     <h1>Modification d'astuces</h1>
     <?php
-    if (isset($_POST["btnAstuce"])) {
+    /*if (isset($_POST["btnComm"])) {
         if (isset($_SESSION["NoUser"])) {
-            $Req = $MaBase->query("UPDATE Astuce SET Astuce = '" . $_POST["txtAstuce"] . "' WHERE IdAstuce = '" . $_POST["nbastuce"] . "'");
-            echo "Astuce modifiée";
+            $Req = $MaBase->query("UPDATE Commentaire SET Commentaire = '" . $_POST["txtComm"] . "' WHERE IdAstuce = '" . $_POST["nbastuce"] . "'");
         } else echo "Vous n'êtes pas connecté";
-        echo '<p><a href="modifastuce.php">Modifier une autre astuce</a></p>';
-    } else {
+        echo '<p><a href="modifastuce.php">Modifier un autre commentaire</a></p>';
+    } else {*/
     ?>
         <form action="" method="post">
             Astuce : <select name="nbastuce" id="nbastuce" required>
@@ -40,11 +39,12 @@ try {
                     </option>
                 <?php } ?>
             </select>
-            Modif : <input type="text" name="txtAstuce" id="txtAstuce" required>
-            <input type="submit" name="btnAstuce" value="Modifier">
+            Modif : <input type="text" name="txtComm" id="txtComm" required>
+            <input type="submit" name="btnComm" value="Modifier">
+            <span>Le bouton ne marche pas</span>
         </form>
     <?php
-    }
+    //}
     ?>
     <p><a href="../index.php">Retour</a></p>
 </body>

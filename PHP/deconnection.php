@@ -14,7 +14,7 @@ include "../Classes/Utilisateur.php";
     <title>Exercice BDD</title>
 </head>
 
-<body class="blur" background="../Image/1204408.jpg">
+<body>
     <h1>Deconnexion</h1>
     <?php
     session_unset();

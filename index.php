@@ -18,7 +18,7 @@ try {
     <title>Exercice BDD</title>
 </head>
 
-<body class="blur" background="Image/1204408.jpg">
+<body>
     <div class="compte">
         <ul>
             <?php
@@ -30,18 +30,16 @@ try {
         </ul>
     </div>
     <h1 class="centre"><u>Bienvenue Sur Astuce-Jeux !</u></h1>
-    <nav>
-        <div class="border">
-            <ul>
-                <li><a href="PHP/affichage.php">Voir Astuce</a></li>
-                <li><a href="PHP/ajoutastuce.php">Ajouter Astuce</a></li>
-                <li><a href="PHP/ajoutcomm.php">Ajouter Commentaire</a></li>
-                <li><a href="PHP/ajoutjeu.php">Ajouter Jeux</a></li>
-                <li><a href="PHP/modifastuce.php">Modifier Astuce</a></li>
-                <li><a href="PHP/delastuce.php">Supprimer Astuce</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="border">
+        <ul>
+            <li><a href="PHP/affichage.php">Voir Astuce</a></li>
+            <li><a href="PHP/ajoutastuce.php">Ajouter Astuce</a></li>
+            <li><a href="PHP/ajoutcomm.php">Ajouter Commentaire</a></li>
+            <li><a href="PHP/ajoutjeu.php">Ajouter Jeux</a></li>
+            <li><a href="PHP/modifastuce.php">Modifier Astuce</a></li>
+            <li><a href="PHP/delastuce.php">Supprimer Astuce</a></li>
+        </ul>
+    </div>
 </body>
 
 </html>

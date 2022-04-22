@@ -18,7 +18,7 @@ try {
     <link rel='stylesheet' href='../CSS/fichier.css'>
 </head>
 
-<body class="blur" background="../Image/1204408.jpg">
+<body>
     <h1>Insertion d'astuces</h1>
     <?php
     if (isset($_POST["btnJeux"])) {

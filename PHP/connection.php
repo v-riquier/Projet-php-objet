@@ -19,13 +19,14 @@ try {
     <title>Exercice BDD</title>
 </head>
 
-<body class="blur" background="../Image/1204408.jpg">
+<body>
     <h1>Connexion</h1>
     <?php
     if (isset($_POST["btnConnection"])) {
         $Req = $MaBase->query("SELECT * FROM User WHERE NomUser = '" . $_POST["txtUser"] . "' AND Pass = '" . $_POST["pwdUser"] . "'");
         $test = $Req->fetch();
         if (isset($test["IdUser"])) {
+            $_SESSION["NoUser"] = $test["IdUser"];
             $util = new User($test["IdUser"], $test["NomUser"]);
             echo "Connecté en tant que " . $_SESSION["NomUser"];
         } else echo "Utilisateur inconnu";

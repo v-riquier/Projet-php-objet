@@ -18,13 +18,13 @@ try {
     <link rel='stylesheet' href='../CSS/fichier.css'>
 </head>
 
-<body class="blur" background="../Image/1204408.jpg">
-    <h1>Insertion d'astuces</h1>
+<body>
+    <h1>Insertion de commentaires</h1>
     <?php
     if (isset($_POST["btnJeux"])) {
         if (isset($_SESSION["NoUser"])) {
             $Req = $MaBase->query("INSERT INTO Commentaire(IdAstuce,IdUser,Commentaire) VALUES ('" . $_POST["nbAstuce"] . "','" . $_SESSION["NoUser"] . "','" . $_POST["txtComm"] . "')");
-            echo "Astuce ajoutée";
+            echo "Commentaire ajouté";
         } else echo "Vous n'êtes pas connecté";
         echo '<p><a href="ajoutcomm.php">Ajouter un autre commentaire</a></p>';
     } else {
@@ -42,7 +42,7 @@ try {
                 <?php } ?>
             </select>
             Commentaire : <input type="text" name="txtComm" id="txtComm" required>
-            <input type="submit" name="btnJeux" value="Ajouter une astuce">
+            <input type="submit" name="btnJeux" value="Ajouter un commentaire">
         </form>
     <?php
     }

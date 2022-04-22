@@ -23,20 +23,19 @@ try {
     <?php
     if (isset($_POST["btnSupp"])) {
         if (isset($_SESSION["NoUser"])) {
-            $Req = $MaBase->query("DELETE FROM Astuce WHERE IdAstuce = '" . $_POST["nbAstuce"] . "'");
-            $Req = $MaBase->query("DELETE FROM Commentaire WHERE IdAstuce = '" . $_POST["nbAstuce"] . "'");
-            echo "Astuce et commentaires liés supprimés";
+            $Req = $MaBase->query("DELETE FROM Commentaire WHERE IdComm = '" . $_POST["nbComm"] . "'");
+            echo "Commentaire supprimé";
         } else echo "Vous n'êtes pas connecté";
     }
     ?>
     <form action="" method="post">
-        Astuce : <select name="nbAstuce" id="nbAstuce" required>
+        Astuce : <select name="nbComm" id="nbComm" required>
             <option value=""> ---Choisir Astuce--- </option>
-            <?php $reponse = $MaBase->query("SELECT Jeux.Titre,Astuce.IdAstuce,Astuce.Astuce FROM Jeux,Astuce WHERE Astuce.IdJeux=Jeux.IdJeux ORDER BY Jeux.Titre;");
+            <?php $reponse = $MaBase->query("SELECT Jeux.Titre,Commentaire.IdComm,Astuce.Astuce,Commentaire.Commentaire FROM Jeux,Astuce,Commentaire WHERE Astuce.IdJeux=Jeux.IdJeux AND Commentaire.IdAstuce = Astuce.IdAstuce ORDER BY Jeux.Titre");
             while ($donnees = $reponse->fetch()) {
             ?>
-                <option value="<?php echo $donnees['IdAstuce']; ?>">
-                    <?php echo $donnees["Titre"] . " : " . $donnees['Astuce']; ?>
+                <option value="<?php echo $donnees['IdComm']; ?>">
+                    <?php echo $donnees["Titre"] . " : " . $donnees["Astuce"] . ":" . $donnees["Commentaire"] ; ?>
                 </option>
             <?php } ?>
         </select>
