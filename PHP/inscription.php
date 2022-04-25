@@ -22,12 +22,12 @@ try {
 <body>
     <h1>Inscription</h1>
     <?php
-    if (isset($_POST["btnAjout"])){
+    if (isset($_POST["btnAjout"])) {
         $Req = $MaBase->query("INSERT INTO User(NomUser,Pass,IdAdmin) VALUES ('" . $_POST["txtUser"] . "','" . $_POST["pwdUser"] . "','0')");
         $Req = $MaBase->query("SELECT * FROM User WHERE NomUser = '" . $_POST["txtUser"] . "' AND Pass = '" . $_POST["pwdUser"] . "'");
         $test = $Req->fetch();
         $_SESSION["NoUser"] = $test["IdUser"];
-        $util=new User($test["IdUser"],$test["NomUser"]);
+        $util = new User($test["IdUser"], $test["NomUser"]);
         echo "Bienvenue " . $_SESSION["NomUser"];
     } else {
     ?>

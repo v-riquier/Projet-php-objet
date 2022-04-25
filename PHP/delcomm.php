@@ -35,7 +35,7 @@ try {
             while ($donnees = $reponse->fetch()) {
             ?>
                 <option value="<?php echo $donnees['IdComm']; ?>">
-                    <?php echo $donnees["Titre"] . " : " . $donnees["Astuce"] . ":" . $donnees["Commentaire"] ; ?>
+                    <?php echo $donnees["Titre"] . " : " . $donnees["Astuce"] . ":" . $donnees["Commentaire"]; ?>
                 </option>
             <?php } ?>
         </select>
