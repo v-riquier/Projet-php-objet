@@ -37,7 +37,9 @@ try {
             <li><a href="PHP/ajoutcomm.php">Ajouter Commentaire</a></li>
             <li><a href="PHP/ajoutjeu.php">Ajouter Jeux</a></li>
             <li><a href="PHP/modifastuce.php">Modifier Astuce</a></li>
+            <li><a href="PHP/modifcomm.php">Modifier Commentaire</a></li>
             <li><a href="PHP/delastuce.php">Supprimer Astuce</a></li>
+            <li><a href="PHP/delcomm.php">Supprimer Commentaire</a></li>
         </ul>
     </div>
 </body>
