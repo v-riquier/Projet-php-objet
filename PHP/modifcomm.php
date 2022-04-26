@@ -9,8 +9,8 @@ echo "<h1>Modification de commentaire</h1>";
     } else {*/
 ?>
 <form action="" method="post">
-    Astuce : <select name="nbastuce" id="nbastuce" required>
-        <option value="">---Choisir Astuce---</option>
+    Commentaire : <select name="nbastuce" id="nbastuce" required>
+        <option value="">---Choisir Commentaire---</option>
         <?php $reponse = $MaBase->query("SELECT Jeux.Titre,Astuce.IdAstuce,Astuce.Astuce FROM Jeux,Astuce WHERE Astuce.IdJeux=Jeux.IdJeux ORDER BY Jeux.Titre;");
         while ($donnees = $reponse->fetch()) {
         ?>
