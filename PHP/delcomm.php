@@ -9,8 +9,8 @@ if (isset($_POST["btnSupp"])) {
 } else {
 ?>
     <form action="" method="post">
-        Astuce : <select name="nbComm" id="nbComm" required>
-            <option value=""> ---Choisir Astuce--- </option>
+        Commentaire : <select name="nbComm" id="nbComm" required>
+            <option value=""> ---Choisir Commentaire--- </option>
             <?php $reponse = $MaBase->query("SELECT Jeux.Titre,Commentaire.IdComm,Astuce.Astuce,Commentaire.Commentaire FROM Jeux,Astuce,Commentaire WHERE Astuce.IdJeux=Jeux.IdJeux AND Commentaire.IdAstuce = Astuce.IdAstuce ORDER BY Jeux.Titre");
             while ($donnees = $reponse->fetch()) {
             ?>
