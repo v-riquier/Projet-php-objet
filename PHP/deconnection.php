@@ -2,5 +2,6 @@
 include "header.php";
 echo "<h1>Deconnexion</h1>";
 session_unset();
-echo "Vous avez été deconnecté";
+header("Location: ../index.php");
 include "footer.php";
+?>

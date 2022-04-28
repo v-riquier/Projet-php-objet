@@ -6,6 +6,7 @@ if (isset($_POST["btnSupp"])) {
         $Req = $MaBase->query("DELETE FROM Commentaire WHERE IdComm = '" . $_POST["nbComm"] . "'");
         echo "Commentaire supprimé";
     } else echo "Vous n'êtes pas connecté";
+    echo '<p><a href="delcomm.php">Supprimer un autre commentaire</a></p>';
 } else {
 ?>
     <form action="" method="post">
@@ -15,7 +16,7 @@ if (isset($_POST["btnSupp"])) {
             while ($donnees = $reponse->fetch()) {
             ?>
                 <option value="<?php echo $donnees['IdComm']; ?>">
-                    <?php echo $donnees["Titre"] . " : " . $donnees["Astuce"] . ":" . $donnees["Commentaire"]; ?>
+                    <?php echo $donnees["Titre"] . " : " . $donnees["Astuce"] . " : " . $donnees["Commentaire"]; ?>
                 </option>
             <?php } ?>
         </select>

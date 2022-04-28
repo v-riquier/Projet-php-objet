@@ -16,22 +16,18 @@ if (isset($_POST["btnJeux"])) {
     </form>
 <?php
 }
-try {
-    $Req = $MaBase->query("SELECT * FROM Jeux ORDER BY Titre");
+$Req = $MaBase->query("SELECT * FROM Jeux ORDER BY Titre");
 ?>
-    <table>
+<table>
+    <tr>
+        <th>Titre</th>
+    </tr>
+    <?php while ($tab = $Req->fetch()) { ?>
         <tr>
-            <th>Titre</th>
+            <td><?php echo $tab["Titre"]; ?></td>
         </tr>
-        <?php while ($tab = $Req->fetch()) { ?>
-            <tr>
-                <td><?php echo $tab["Titre"]; ?></td>
-            </tr>
-        <?php } ?>
-    </table>
+    <?php } ?>
+</table>
 <?php
-} catch (Exception $e) {
-    echo "La base virale VPS n'a pas été mis à jour." . $e->getMessage();
-}
 include "footer.php";
 ?>

@@ -10,13 +10,11 @@ if (isset($_POST["btnAjout"])) {
     echo "Bienvenue " . $_SESSION["NomUser"];
 } else {
 ?>
-    <div>
-        <form action="" method="post">
-            Login : <input type="text" name="txtUser" id="txtUser" required>
-            Mot de passe : <input type="password" name="pwdUser" id="pwdUser" required>
-            <input type="submit" name="btnAjout" value="Créer un utilisateur">
-        </form>
-    </div>
+    <form action="" method="post">
+        Login : <input type="text" name="txtUser" id="txtUser" required>
+        Mot de passe : <input type="password" name="pwdUser" id="pwdUser" required>
+        <input type="submit" name="btnAjout" value="Créer un utilisateur">
+    </form>
 <?php
 }
 include "footer.php";

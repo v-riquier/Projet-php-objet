@@ -1,40 +1,24 @@
-body {
-    background-image: url("../Image/1204408.jpg");
+body{
+    background-image: url(../Image/wallpaper.png);
 }
 
 h1.centre {
     text-align: center;
 }
 
-a,span {
+span{
     display: block;
 }
 
-th,td{
-    border:1px black solid;
-}
-
-div.formulaire {
-    margin-bottom: 1em;
+th,td {
+    border: 1px black solid;
+    background-color: white;
 }
 
 div.border a {
-    font-size: 35px;
-    width: 12%;
-    margin: 30px;
+    font-size: 30px;
     text-align: center;
     display: inline-block;
-    padding: 0 25px;
-    height: 44px;
-    opacity: .8;
-    color: red;
-    text-shadow: 0 0 5px black, 0 0 5px black;
-}
-
-li {
-    position: relative;
-    display: inline-block;
-    padding: 10px;
 }
 
 div.compte a {
@@ -42,5 +26,32 @@ div.compte a {
     margin: 30px;
     display: inline-block;
     height: 44px;
-    color: black;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block: 0;
+}
+
+nav.border {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+
+nav.border li {
+    float: left;
+    margin: 1px 0;
+    width: 25%;
+    text-align: center;
+}
+
+nav.compte li {
+    width: 15%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
 }

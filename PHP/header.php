@@ -16,7 +16,11 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="../Image/icone.png">
     <link rel='stylesheet' href='../CSS/fichier.css'>
-    <title>Exercice BDD</title>
+    <title>Projet PHP</title>
 </head>
 
 <body>
+    <?php
+    if (isset($_SESSION["NomUser"])) echo "Connecté en tant que " . $_SESSION["NomUser"] . "";
+    else echo "Actuellement non connecté";
+    ?>

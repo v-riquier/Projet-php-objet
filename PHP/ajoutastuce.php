@@ -9,7 +9,7 @@ if (isset($_POST["btnJeux"])) {
     echo '<p><a href="ajoutastuce.php">Ajouter une autre astuce</a></p>';
 } else {
 ?>
-    <h2>Formulaire </h2>
+    <h2>Formulaire</h2>
     <form action="" method="post">
         Jeux : <select name="nbJeu" id="nbJeu" required>
             <option value=""> ---Choisir Jeux--- </option>

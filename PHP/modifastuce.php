@@ -21,7 +21,7 @@ if (isset($_POST["btnAstuce"])) {
             <?php } ?>
         </select>
         Modif : <input type="text" name="txtAstuce" id="txtAstuce" required>
-        <input type="submit" name="btnAstuce" value="Modifier">
+        <input type="submit" name="btnAstuce" value="Modification">
     </form>
 <?php
 }

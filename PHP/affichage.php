@@ -53,7 +53,7 @@ if (isset($_POST["btnJeux"])) {
                 echo "</tr>";
             }
             echo "</table>";
-        } else echo "Il n'y a pas d'astuces";
+        } else echo "<span>Il n'y a pas d'astuces</span>";
     }
     include "footer.php";
         ?>
