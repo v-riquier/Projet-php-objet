@@ -2,7 +2,7 @@
 session_start();
 include "Classes/Utilisateur.php";
 try {
-    $MaBase = new PDO('mysql:host=mysql-ogez-riquier.alwaysdata.net;dbname=ogez-riquier_astucesjeux', '257075_test', 'pokemonprovidence');
+    $BDD = new PDO('mysql:host=localhost;dbname=yes', 'root', 'root');
 } catch (Exception $e) {
     echo $e;
 }
@@ -43,7 +43,7 @@ try {
                 <li><a href="PHP/affichage.php">Voir Astuce</a></li>
                 <li><a href="PHP/ajoutastuce.php">Ajouter Astuce</a></li>
                 <li><a href="PHP/ajoutcomm.php">Ajouter Commentaire</a></li>
-                <li><a href="PHP/ajoutjeu.php">Ajouter Jeux</a></li>
+                <li><a href="PHP/ajoutjeu.php">Ajouter Jeu</a></li>
                 <li><a href="PHP/modifastuce.php">Modifier Astuce</a></li>
                 <li><a href="PHP/modifcomm.php">Modifier Commentaire</a></li>
                 <li><a href="PHP/delastuce.php">Supprimer Astuce</a></li>

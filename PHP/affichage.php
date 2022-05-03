@@ -3,9 +3,10 @@ include "header.php";
 ?>
 <h1>Affichage de la base de donnée</h1>
 <form action="" method="post">
-    Jeux : <select name="nbJeu" id="nbJeu" required>
+    <label for="nbJeu">Jeu : </label>
+    <select name="nbJeu" id="nbJeu" required>
         <option value=""> ---Choisir Jeux--- </option>
-        <?php $reponse = $MaBase->query("SELECT * FROM Jeux ORDER BY Titre");
+        <?php $reponse = $BDD->query("SELECT * FROM Jeux ORDER BY Titre");
         while ($donnees = $reponse->fetch()) {
         ?>
             <option value="<?php echo $donnees['IdJeux']; ?>">
@@ -17,11 +18,11 @@ include "header.php";
 </form>
 <?php
 if (isset($_POST["btnJeux"])) {
-    $reponse = $MaBase->query("SELECT * FROM Jeux WHERE IdJeux = '" . $_POST["nbJeu"] .  "'");
+    $reponse = $BDD->query("SELECT * FROM Jeux WHERE IdJeux = '" . $_POST["nbJeu"] .  "'");
     $donnees = $reponse->fetch();
     echo "<span>Jeu selectionné : " . $donnees["Titre"] . "</span>";
-    $Req1 = $MaBase->query("SELECT Astuce.IdAstuce,Astuce.Astuce FROM Astuce,User WHERE Astuce.IdUser = User.IdUser AND Astuce.IdJeux = '" . $_POST["nbJeu"] . "'");
-    $compte = $MaBase->query("SELECT COUNT(*) FROM Astuce WHERE Astuce.IdJeux = '" . $_POST["nbJeu"] . "'");
+    $Req1 = $BDD->query("SELECT Astuce.IdAstuce,Astuce.Astuce FROM Astuce,User WHERE Astuce.IdUser = User.IdUser AND Astuce.IdJeux = '" . $_POST["nbJeu"] . "'");
+    $compte = $BDD->query("SELECT COUNT(*) FROM Astuce WHERE Astuce.IdJeux = '" . $_POST["nbJeu"] . "'");
     $qqch = $compte->fetch();
     if ($qqch["COUNT(*)"] > 0) {
         if ($qqch["COUNT(*)"] >= 2) echo "<span>Il y a " . $qqch["COUNT(*)"] . " astuces.</span>";
@@ -34,8 +35,8 @@ if (isset($_POST["btnJeux"])) {
             </tr>
             <?php
             while ($tab1 = $Req1->fetch()) {
-                $Req2 = $MaBase->query("SELECT Commentaire FROM Commentaire WHERE Commentaire.IdAstuce = '" . $tab1["IdAstuce"] . "'");
-                $compte = $MaBase->query("SELECT COUNT(*) FROM Commentaire WHERE Commentaire.IdAstuce = '" . $tab1["IdAstuce"] . "'");
+                $Req2 = $BDD->query("SELECT Commentaire FROM Commentaire WHERE Commentaire.IdAstuce = '" . $tab1["IdAstuce"] . "'");
+                $compte = $BDD->query("SELECT COUNT(*) FROM Commentaire WHERE Commentaire.IdAstuce = '" . $tab1["IdAstuce"] . "'");
                 $qqch = $compte->fetch();
             ?>
                 <tr>
