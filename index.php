@@ -2,7 +2,7 @@
 session_start();
 include "Classes/Utilisateur.php";
 try {
-    $BDD = new PDO('mysql:host=localhost;dbname=yes', 'root', 'root');
+    $BDD = new PDO('mysql:host=mysql-ogez-riquier.alwaysdata.net;dbname=ogez-riquier_astucesjeux', '257075_test', 'pokemonprovidence');
 } catch (Exception $e) {
     echo $e;
 }
