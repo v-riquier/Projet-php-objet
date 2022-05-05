@@ -2,6 +2,10 @@ body {
   background-image: url(../Image/wallpaper.jpg);
 }
 
+body.index{
+  margin: 0px;
+}
+
 h1.centre {
   text-align: center;
 }
@@ -20,42 +24,40 @@ td.nocolor {
   background-color: initial;
 }
 
-div.border a {
-  font-size: 30px;
-  text-align: center;
-  display: inline-block;
-}
-
-div.compte a {
-  font-size: 25px;
-  margin: 30px;
-  display: inline-block;
-  height: 44px;
-  color: aquamarine;
-}
-
 ul {
   list-style-type: none;
   padding-inline-start: 0;
   margin:0px;
 }
 
-nav.border {
+.border {
+  font-size: 30px;
+  display: inline-block;
   width: 100%;
-  margin: 0 auto;
-  background-color: white;
+  margin: 0px;
   position: sticky;
-  top: 0px;
 }
 
-nav.border li {
+.border li {
   float: left;
-  margin: 1px 0;
   width: 25%;
   text-align: center;
 }
 
-nav.compte li {
+.border a{
+  color: antiquewhite;
+}
+
+.compte a {
+  font-size: 25px;
+  display: inline-block;
+  height: 44px;
+}
+.compte{
+  margin-top: 1em;
+}
+
+.compte li {
   width: 15%;
   text-align: center;
   position: relative;

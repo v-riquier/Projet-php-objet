@@ -19,8 +19,22 @@ try {
     <title>Projet PHP</title>
 </head>
 
-<body>
-    <div class="compte">
+<body class="index">
+    <div>
+        <nav class="border">
+            <ul>
+                <li><a href="PHP/affichage.php">Voir Astuce</a></li>
+                <li><a href="PHP/ajoutastuce.php">Ajouter Astuce</a></li>
+                <li><a href="PHP/ajoutcomm.php">Ajouter Commentaire</a></li>
+                <li><a href="PHP/ajoutjeu.php">Ajouter Jeu</a></li>
+                <li><a href="PHP/modifastuce.php">Modifier Astuce</a></li>
+                <li><a href="PHP/modifcomm.php">Modifier Commentaire</a></li>
+                <li><a href="PHP/delastuce.php">Supprimer Astuce</a></li>
+                <li><a href="PHP/delcomm.php">Supprimer Commentaire</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div>
         <nav class="compte">
             <ul>
                 <?php
@@ -37,20 +51,6 @@ try {
         </nav>
     </div>
     <h1 class="centre"><u>Bienvenue Sur Astuce-Jeux !</u></h1>
-    <div class="border">
-        <nav class="border">
-            <ul>
-                <li><a href="PHP/affichage.php">Voir Astuce</a></li>
-                <li><a href="PHP/ajoutastuce.php">Ajouter Astuce</a></li>
-                <li><a href="PHP/ajoutcomm.php">Ajouter Commentaire</a></li>
-                <li><a href="PHP/ajoutjeu.php">Ajouter Jeu</a></li>
-                <li><a href="PHP/modifastuce.php">Modifier Astuce</a></li>
-                <li><a href="PHP/modifcomm.php">Modifier Commentaire</a></li>
-                <li><a href="PHP/delastuce.php">Supprimer Astuce</a></li>
-                <li><a href="PHP/delcomm.php">Supprimer Commentaire</a></li>
-            </ul>
-        </nav>
-    </div>
 </body>
 
 </html>

@@ -15,7 +15,7 @@ try {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="../Image/icone.png">
-    <link rel='stylesheet' href='../CSS/fichier.css'>
+    <link rel="stylesheet" href="../CSS/fichier.css">
     <title>Projet PHP</title>
 </head>
 
