@@ -1,4 +1,4 @@
-<p><a href="../index.php">Retour</a></p>
+<?php echo '<p><a href="../index.php">Retour</a></p>'; ?>
 </body>
 
 </html>
