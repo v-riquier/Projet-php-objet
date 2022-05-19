@@ -12,7 +12,7 @@ if (isset($_POST["btnJeux"])) {
     <form action="" method="post">
         <label for="nbJeu">Jeu : </label>
         <select name="nbJeu" id="nbJeu" required>
-            <option value=""> ---Choisir Jeux--- </option>
+            <option value=""> ---Choisir Jeu--- </option>
             <?php $reponse = $BDD->query("SELECT * FROM Jeux ORDER BY Titre");
             while ($donnees = $reponse->fetch()) {
             ?>
